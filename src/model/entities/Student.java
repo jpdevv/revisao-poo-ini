@@ -1,13 +1,13 @@
 package model.entities;
 
 public class Student {
-    private String registration, email, name, address;
+    private String name, registration, address, email;
 
-    public Student(String registration, String name, String email, String address){
-        this.registration = registration;
+    public Student(String name, String registration, String address, String email){
         this.name = name;
-        this.email = email;
+        this.registration = registration;
         this.address = address;
+        this.email = email;
     }
 
     public String getName(){

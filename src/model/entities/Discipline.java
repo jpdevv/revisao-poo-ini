@@ -3,10 +3,10 @@ package model.entities;
 import java.util.Random;
 
 public class Discipline {
-    private String name, teacher;
-    private int code, workload;
+    private String name, teacher, workload;
+    private int code;
 
-    public Discipline(String name, int workload, String teacher) {
+    public Discipline(String name, String workload, String teacher) {
         this.name = name;
         this.code = new Random().nextInt(999);
         this.workload = workload;
@@ -21,7 +21,7 @@ public class Discipline {
         return code;
     }
 
-    public int getWorkload() {
+    public String getWorkload() {
         return workload;
     }
 
@@ -33,7 +33,7 @@ public class Discipline {
         this.code = code;
     }
 
-    public void setWorkload(int workload) {
+    public void setWorkload(String workload) {
         this.workload = workload;
     }
 
@@ -46,6 +46,6 @@ public class Discipline {
     }
 
     public String toString() {
-        return String.format("Código: %d\nDisciplina: %s\nCarga Horária: %d\nProfessor: %s\n", code, name, workload, teacher);
+        return String.format("Código: %d\nDisciplina: %s\nCarga Horária: %s\nProfessor: %s\n", code, name, workload, teacher);
     }
 }

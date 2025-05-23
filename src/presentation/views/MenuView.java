@@ -4,12 +4,16 @@ import business.services.PrinterService;
 import business.services.ReaderService;
 
 public class MenuView {
-    private PrinterService printerService = new PrinterService();
-    private ReaderService readerService = new ReaderService();
+    private static PrinterService printerService = new PrinterService();
+    private static ReaderService readerService = new ReaderService();
+    private static RegistryView registryView = new RegistryView();
+    private static ListView listView = new ListView();
 
     public boolean showMenu() {
         printerService.println("--------------- SISTEMA DE CADASTRO ---------------");
-        printerService.println("1 - Cadastrar Disciplina");
+        printerService.println("1 - Cadastrar disciplina");
+        printerService.println("2 - Cadastrar estudante");
+        printerService.println("3 - Listar");
         printerService.println("0 - Sair");
         printerService.print("Escolha uma opção: ");
         String choice = readerService.nextLine();
@@ -19,9 +23,11 @@ public class MenuView {
                 printerService.println("Encerrando sistema...");
                 return false;
             }
+            case "1" -> registryView.showRegistryDiscipline();
+            case "2" -> registryView.showRegistryStudent();
+            case "3" -> listView.showList();
             default -> printerService.println("[Erro] - Opção inválida.");
         }
-
         return true;
     }
 }
