@@ -7,6 +7,7 @@ public class MenuView {
     private PrinterService printerService = new PrinterService();
     private ReaderService readerService = new ReaderService();
     private RegistryView registryView = new RegistryView();
+    private ListView listView = new ListView();
 
     public boolean showMenu() {
         printerService.println("--------------- SISTEMA DE CADASTRO ---------------");
@@ -24,7 +25,13 @@ public class MenuView {
         String choice = readerService.nextLine();
 
         switch (choice) {
+            case "0" -> {
+                printerService.println("Encerrando sistema...");
+                return false;
+            }
             case "1" -> registryView.showRegistryDiscipline();
+            case "9" -> listView.showListMenu();
+            default -> printerService.println("[Erro] - Opção inválida.");
         }
 
         return true;

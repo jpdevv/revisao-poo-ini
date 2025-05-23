@@ -13,9 +13,14 @@ public class DisciplineRepository {
     }
 
     public String listDisciplines() {
-        for(Discipline discipline : disciplines) {
-            return discipline.toString();
+        if (disciplines.isEmpty()) {
+            return null;
         }
-        return null;
+        
+        StringBuilder result = new StringBuilder();
+        for (Discipline discipline : disciplines) {
+            result.append(discipline.toString()).append("\n");
+        }
+        return result.toString();
     }
 }

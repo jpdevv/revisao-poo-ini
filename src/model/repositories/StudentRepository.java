@@ -12,9 +12,14 @@ public class StudentRepository {
     }
 
     public String listStudents() {
-        for (Student student : students) {
-            return student.toString();
+        if (students.isEmpty()) {
+            return null;
         }
-        return null;
+        
+        StringBuilder result = new StringBuilder();
+        for (Student student : students) {
+            result.append(student.toString()).append("\n");
+        }
+        return result.toString();
     }
 }

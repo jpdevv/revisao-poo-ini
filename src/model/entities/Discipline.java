@@ -46,6 +46,6 @@ public class Discipline {
     }
 
     public String toString() {
-        return String.format("Código: %d\nDisciplina: %s\nCarga Horária: %d\nProfessor: %s\n", name, code, workload, teacher);
+        return String.format("Código: %d\nDisciplina: %s\nCarga Horária: %d\nProfessor: %s\n", code, name, workload, teacher);
     }
 }

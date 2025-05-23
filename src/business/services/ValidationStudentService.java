@@ -1,7 +1,5 @@
 package business.services;
 
-import model.repositories.StudentRepository;
-
 public class ValidationStudentService {
 
     public void validateStudent(String registration, String name, String email, String address) {

@@ -13,9 +13,10 @@ public class DisciplineService {
     }
 
     public String showAllDisciplines() {
-        if(disciplineRepository.listDisciplines() == null) {
-            return null;
+        String disciplines = disciplineRepository.listDisciplines();
+        if(disciplines == null) {
+            return "Não há disciplinas cadastradas.\n";
         }
-        return disciplineRepository.listDisciplines();
+        return disciplines;
     }
 }

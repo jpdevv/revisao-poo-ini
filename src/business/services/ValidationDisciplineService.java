@@ -1,7 +1,5 @@
 package business.services;
 
-import model.repositories.DisciplineRepository;
-
 public class ValidationDisciplineService {
 
     public void validateDiscipline(String disciplineName, int workload, String teacherName) {
