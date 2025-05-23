@@ -12,15 +12,6 @@ public class DisciplineRepository {
         disciplines.add(discipline);
     }
 
-    public Discipline findByName(String name) {
-        for (Discipline discipline : disciplines) {
-            if (discipline.getName().equals(name)) {
-                return discipline;
-            }
-        }
-        return null;
-    }
-
     public String listDisciplines() {
         for(Discipline discipline : disciplines) {
             return discipline.toString();

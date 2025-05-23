@@ -11,15 +11,6 @@ public class StudentRepository {
         students.add(student);
     }
 
-    public Student findByRegistration(String registration) {
-        for (Student student : students) {
-            if (student.getRegistration().equals(registration)) {
-                return student;
-            }
-        }
-        return null;
-    }
-
     public String listStudents() {
         for (Student student : students) {
             return student.toString();

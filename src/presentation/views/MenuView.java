@@ -25,8 +25,6 @@ public class MenuView {
 
         switch (choice) {
             case "1" -> registryView.showRegistryDiscipline();
-            case "2" -> registryView.showRegistryStudent();
-            case "3" -> registryView.showAddStudentToDiscipline();
         }
 
         return true;
