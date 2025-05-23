@@ -15,12 +15,14 @@ public class RegistryView {
         printerService.println("--------------- CADASTRO DE DISCIPLINA ---------------");
         printerService.print("Nome da disciplina: ");
         String disciplineName = readerService.nextLine();
+        printerService.print("Código da disciplina: ");
+        String disciplineCode = readerService.nextLine();
         printerService.print("Nome do professor da disciplina: ");
         String disciplineTeacher = readerService.nextLine();
         printerService.print("Carga horária: ");
         String workload = readerService.nextLine();
         
-        disciplineController.registerDiscipline(disciplineName, disciplineTeacher, workload);
+        disciplineController.registerDiscipline(disciplineName, disciplineTeacher, workload, disciplineCode);
 
         printerService.println("Disciplina cadastrada com sucesso!");
     }

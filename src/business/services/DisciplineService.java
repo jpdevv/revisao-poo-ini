@@ -13,4 +13,8 @@ public class DisciplineService {
     public String showAll() {
         return disciplineRepository.showAll();
     }
+
+    public void deleteDiscipline(String code) {
+        disciplineRepository.delete(code);
+    }
 }

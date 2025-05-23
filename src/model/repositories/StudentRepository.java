@@ -28,4 +28,13 @@ public class StudentRepository {
         }
         return sb.toString();
     }
+
+    public void delete(String registration) {
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).getRegistration().equalsIgnoreCase(registration)) {
+                students.remove(i);
+                return;
+            }
+        }
+    }
 }

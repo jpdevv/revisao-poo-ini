@@ -6,8 +6,17 @@ import model.entities.Discipline;
 public class DisciplineController {
     private static DisciplineService disciplineService = new DisciplineService();
 
-    public void registerDiscipline(String disciplineName, String disciplineTeacher, String workload) {
-        Discipline discipline = new Discipline(disciplineName, workload, disciplineTeacher);
+    public void registerDiscipline(String disciplineName, String disciplineTeacher, String workload, String code) {
+        Discipline discipline = new Discipline(disciplineName, workload, disciplineTeacher, code);
         disciplineService.registerDiscipline(discipline);
+    }
+
+    public boolean deleteDiscipline(String code, String confirmation) {
+        if (confirmation.equalsIgnoreCase("S")) {
+            disciplineService.deleteDiscipline(code);
+            return true;
+        } else {
+            return false;
+        }
     }
 }

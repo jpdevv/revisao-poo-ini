@@ -1,14 +1,11 @@
 package model.entities;
 
-import java.util.Random;
-
 public class Discipline {
-    private String name, teacher, workload;
-    private int code;
+    private String name, teacher, workload, code;
 
-    public Discipline(String name, String workload, String teacher) {
+    public Discipline(String name, String workload, String teacher, String code) {
         this.name = name;
-        this.code = new Random().nextInt(999);
+        this.code = code;
         this.workload = workload;
         this.teacher = teacher;
     }
@@ -17,7 +14,7 @@ public class Discipline {
         return name;
     }
 
-    public int getCode() {
+    public String getCode() {
         return code;
     }
 
@@ -29,7 +26,7 @@ public class Discipline {
         this.name = name;
     }
 
-    public void setCode(int code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
@@ -46,6 +43,6 @@ public class Discipline {
     }
 
     public String toString() {
-        return String.format("Código: %d\nDisciplina: %s\nCarga Horária: %s\nProfessor: %s\n", code, name, workload, teacher);
+        return String.format("Código: %s\nDisciplina: %s\nCarga Horária: %s\nProfessor: %s\n", code, name, workload, teacher);
     }
 }

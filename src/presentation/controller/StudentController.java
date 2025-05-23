@@ -10,4 +10,13 @@ public class StudentController {
         Student student = new Student(studentName, registration, studentAddress, studentEmail);
         studentService.registerStudent(student);
     }
+
+    public boolean deleteStudent(String registration, String confirmation) {
+        if(confirmation.equalsIgnoreCase("S")) {
+            studentService.deleteStudent(registration);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

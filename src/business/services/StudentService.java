@@ -13,4 +13,8 @@ public class StudentService {
     public String showAll() {
         return studentRepository.showAll();
     }
+
+    public void deleteStudent(String registration) {
+        studentRepository.delete(registration);
+    }
 }
