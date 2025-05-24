@@ -14,9 +14,10 @@ public class MenuView {
         printerService.println("--------------- SISTEMA DE CADASTRO ---------------");
         printerService.println("1 - Cadastrar disciplina");
         printerService.println("2 - Cadastrar estudante");
-        printerService.println("3 - Excluir disciplina");
-        printerService.println("4 - Excluir estudante");
-        printerService.println("5 - Listar");
+        printerService.println("3 - Cadastrar estudante em uma disciplina");
+        printerService.println("4 - Excluir disciplina");
+        printerService.println("5 - Excluir estudante");
+        printerService.println("9 - Listar");
         printerService.println("0 - Sair");
         printerService.print("Escolha uma opção: ");
         String choice = readerService.nextLine();
@@ -28,9 +29,10 @@ public class MenuView {
             }
             case "1" -> registryView.showRegistryDiscipline();
             case "2" -> registryView.showRegistryStudent();
-            case "3" -> deleteView.showDeleteDiscipline();
-            case "4" -> deleteView.showDeleteStudent();
-            case "5" -> listView.showList();
+            case "3" -> registryView.showRegistryStudentDiscipline();
+            case "4" -> deleteView.showDeleteDiscipline();
+            case "5" -> deleteView.showDeleteStudent();
+            case "9" -> listView.showList();
             default -> printerService.println("[Erro] - Opção inválida.");
         }
         return true;

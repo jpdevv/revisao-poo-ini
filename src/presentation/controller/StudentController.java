@@ -13,8 +13,9 @@ public class StudentController {
 
     public boolean deleteStudent(String registration, String confirmation) {
         if(confirmation.equalsIgnoreCase("S")) {
-            studentService.deleteStudent(registration);
-            return true;
+            boolean sucess = studentService.deleteStudent(registration);
+            if(sucess) return true;
+            else return false;
         } else {
             return false;
         }

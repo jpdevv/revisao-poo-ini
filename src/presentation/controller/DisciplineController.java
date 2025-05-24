@@ -13,10 +13,15 @@ public class DisciplineController {
 
     public boolean deleteDiscipline(String code, String confirmation) {
         if (confirmation.equalsIgnoreCase("S")) {
-            disciplineService.deleteDiscipline(code);
-            return true;
+            boolean sucess = disciplineService.deleteDiscipline(code);
+            if(sucess) return true;
+            else return false;
         } else {
             return false;
         }
+    }
+
+    public void registerStudentInDiscipline(String studentRegistration, String disciplineCode) {
+        
     }
 }

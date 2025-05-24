@@ -14,7 +14,7 @@ public class StudentService {
         return studentRepository.showAll();
     }
 
-    public void deleteStudent(String registration) {
-        studentRepository.delete(registration);
+    public boolean deleteStudent(String registration) {
+        return studentRepository.delete(registration);
     }
 }

@@ -1,7 +1,9 @@
 package presentation.views;
 
+import business.services.DisciplineService;
 import business.services.PrinterService;
 import business.services.ReaderService;
+import business.services.StudentService;
 import presentation.controller.DisciplineController;
 import presentation.controller.StudentController;
 
@@ -10,6 +12,8 @@ public class RegistryView {
     private static ReaderService readerService = new ReaderService();
     private static DisciplineController disciplineController = new DisciplineController();
     private static StudentController studentController = new StudentController();
+    private static StudentService studentService = new StudentService();
+    private static DisciplineService disciplineService = new DisciplineService();
 
     public void showRegistryDiscipline() {
         printerService.println("--------------- CADASTRO DE DISCIPLINA ---------------");
@@ -41,5 +45,17 @@ public class RegistryView {
         studentController.registerStudent(studentName, registration, studentAddress, studentEmail);
 
         printerService.println("Estudante cadastrado(a) com sucesso!");
+    }
+
+    public void showRegistryStudentDiscipline() {
+        printerService.println("--------------- CADASTRO DE ESTUDANTE EM DISCIPLINA ---------------");
+        printerService.println(studentService.showAll());
+        printerService.print("Matrícula do estudante: ");
+        String studentRegistration = readerService.nextLine();
+        printerService.println(disciplineService.showAll());
+        printerService.print("Código da disciplina: ");
+        String disciplineCode = readerService.nextLine();
+
+        disciplineController.registerStudentInDiscipline(studentRegistration, disciplineCode);
     }
 }

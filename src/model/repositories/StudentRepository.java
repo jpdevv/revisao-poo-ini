@@ -18,7 +18,7 @@ public class StudentRepository {
 
     public String showAll() {
         if(students.isEmpty()) {
-            return "Nenhum estudante cadastrado.";
+            return "[Erro] - Nenhum estudante cadastrado.\n";
         }
 
         StringBuilder sb = new StringBuilder();
@@ -29,12 +29,13 @@ public class StudentRepository {
         return sb.toString();
     }
 
-    public void delete(String registration) {
+    public boolean delete(String registration) {
         for (int i = 0; i < students.size(); i++) {
             if (students.get(i).getRegistration().equalsIgnoreCase(registration)) {
                 students.remove(i);
-                return;
+                return true;
             }
         }
+        return false;
     }
 }

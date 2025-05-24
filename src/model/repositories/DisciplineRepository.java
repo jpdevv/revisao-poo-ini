@@ -18,7 +18,7 @@ public class DisciplineRepository {
 
     public String showAll() {
         if(disciplines.isEmpty()) {
-            return "[Erro] - Nenhuma disciplina cadastrada.";
+            return "[Erro] - Nenhuma disciplina cadastrada.\n";
         }
 
         StringBuilder sb = new StringBuilder();
@@ -29,12 +29,13 @@ public class DisciplineRepository {
         return sb.toString();
     }
 
-    public void delete(String code) {
+    public boolean delete(String code) {
         for (int i = 0; i < disciplines.size(); i++) {
             if (disciplines.get(i).getCode().equals(code)) {
                 disciplines.remove(i);
-                return;
+                return true;
             }
         }
+        return false;
     }
 }

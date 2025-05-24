@@ -14,7 +14,7 @@ public class DisciplineService {
         return disciplineRepository.showAll();
     }
 
-    public void deleteDiscipline(String code) {
-        disciplineRepository.delete(code);
+    public boolean deleteDiscipline(String code) {
+        return disciplineRepository.delete(code);
     }
 }

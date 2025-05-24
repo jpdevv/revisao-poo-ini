@@ -23,7 +23,7 @@ public class DeleteView {
         if(wasDeleted) {
             printerService.println("[Sucesso] - Disciplina excluída com sucesso.");
         } else {
-            printerService.println("[Erro] - Exclusão de disciplina cancelada.");
+            printerService.println("[Erro] - Erro ao excluir ou a disciplina não existe.");
         }
     }
 
@@ -39,7 +39,7 @@ public class DeleteView {
         if(wasDeleted) {
             printerService.println("[Sucesso] - Estudante excluído(a) com sucesso.");
         } else {
-            printerService.println("[Erro] - Exclusão de estudante cancelada.");
+            printerService.println("[Erro] - Erro ao excluir ou o(a) estudante não existe.");
         }
     }
     
