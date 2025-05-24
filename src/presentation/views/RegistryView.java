@@ -47,15 +47,23 @@ public class RegistryView {
         printerService.println("Estudante cadastrado(a) com sucesso!");
     }
 
-    public void showRegistryStudentDiscipline() {
+    public void showRegistryStudentToDiscipline() {
         printerService.println("--------------- CADASTRO DE ESTUDANTE EM DISCIPLINA ---------------");
+        if(studentService.showAll() == null) {
+            printerService.println("[Erro] - Nenhum estudante cadastrado.\n");
+            return;
+        }
         printerService.println(studentService.showAll());
         printerService.print("Matrícula do estudante: ");
         String studentRegistration = readerService.nextLine();
+
+        if(disciplineService.showAll() == null) {
+            printerService.println("[Erro] - Nenhuma disciplina cadastrada.\n");
+            return;
+        }
         printerService.println(disciplineService.showAll());
         printerService.print("Código da disciplina: ");
         String disciplineCode = readerService.nextLine();
 
-        disciplineController.registerStudentInDiscipline(studentRegistration, disciplineCode);
     }
 }

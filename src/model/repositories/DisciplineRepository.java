@@ -17,9 +17,7 @@ public class DisciplineRepository {
     }
 
     public String showAll() {
-        if(disciplines.isEmpty()) {
-            return "[Erro] - Nenhuma disciplina cadastrada.\n";
-        }
+        if(disciplines.isEmpty()) return null;
 
         StringBuilder sb = new StringBuilder();
         sb.append("--------------- DISCIPLINAS ---------------\n");

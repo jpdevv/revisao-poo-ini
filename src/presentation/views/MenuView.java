@@ -29,7 +29,7 @@ public class MenuView {
             }
             case "1" -> registryView.showRegistryDiscipline();
             case "2" -> registryView.showRegistryStudent();
-            case "3" -> registryView.showRegistryStudentDiscipline();
+            case "3" -> registryView.showRegistryStudentToDiscipline();
             case "4" -> deleteView.showDeleteDiscipline();
             case "5" -> deleteView.showDeleteStudent();
             case "9" -> listView.showList();

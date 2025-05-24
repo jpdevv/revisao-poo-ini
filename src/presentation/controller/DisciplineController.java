@@ -20,8 +20,4 @@ public class DisciplineController {
             return false;
         }
     }
-
-    public void registerStudentInDiscipline(String studentRegistration, String disciplineCode) {
-        
-    }
 }

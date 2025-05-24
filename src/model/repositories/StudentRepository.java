@@ -17,9 +17,7 @@ public class StudentRepository {
     }
 
     public String showAll() {
-        if(students.isEmpty()) {
-            return "[Erro] - Nenhum estudante cadastrado.\n";
-        }
+        if(students.isEmpty()) return null;
 
         StringBuilder sb = new StringBuilder();
         sb.append("--------------- LISTA DE ESTUDANTES ---------------\n");
